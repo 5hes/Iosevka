@@ -43,7 +43,27 @@ jobs:
 
     - name: Check working-directory
       run: tree dist/
+
+    - name: Postinstall
+      run: |
+        cd dist/TTF-Unhinted
+        for file in *.*; do
+          if [ ! -f "$file" ]; then
+            continue
+          fi
+
+          filename="${file%.*}"
+          extension="${file##*.}"
+
+          new_name="${filename}-Unhinted.${extension}"
         
+          mv "$file" "$new_name"
+        done
+
+        cd ..
+        zip TTF.zip TTF/*
+        zip TTF-Unhinted.zip TTF-Unhinted/*
+
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
