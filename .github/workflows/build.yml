@@ -46,7 +46,7 @@ jobs:
 
     - name: Postinstall
       run: |
-        cd dist/TTF-Unhinted
+        cd dist/Ioveska/TTF-Unhinted
         for file in *.*; do
           if [ ! -f "$file" ]; then
             continue
