@@ -9,7 +9,7 @@ noLigation = true
 [buildPlans.Ioveska.variants.design]
 two = "straight-neck-serifless"
 # three = "flat-top-serifless"
-four = "closed-serifless"
+# four = "closed-serifless"
 eight = "two-circles"
 capital-d = "more-rounded-serifless"
 # capital-g = "toothless-corner-serifless-hooked"
